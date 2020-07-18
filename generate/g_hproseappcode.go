@@ -24,9 +24,9 @@ import (
 	"path"
 	"strings"
 
-	beeLogger "github.com/beego/bee/logger"
-	"github.com/beego/bee/logger/colors"
-	"github.com/beego/bee/utils"
+	beeLogger "github.com/anxpp/bee/logger"
+	"github.com/anxpp/bee/logger/colors"
+	"github.com/anxpp/bee/utils"
 	_ "github.com/go-sql-driver/mysql"
 	_ "github.com/lib/pq"
 )
@@ -47,7 +47,7 @@ import (
 	"{{.Appname}}/models"
 	"github.com/hprose/hprose-golang/rpc"
 
-	"github.com/astaxie/beego"
+	"github.com/anxpp/beego"
 )
 
 func logInvokeHandler(
@@ -90,8 +90,8 @@ import (
 	"{{.Appname}}/models"
 	"github.com/hprose/hprose-golang/rpc"
 
-	"github.com/astaxie/beego"
-	"github.com/astaxie/beego/orm"
+	"github.com/anxpp/beego"
+	"github.com/anxpp/beego/orm"
 	{{.DriverPkg}}
 )
 
@@ -149,12 +149,12 @@ type Object struct {
 
 func init() {
 	Objects = make(map[string]*Object)
-	Objects["hjkhsbnmn123"] = &Object{"hjkhsbnmn123", 100, "astaxie"}
+	Objects["hjkhsbnmn123"] = &Object{"hjkhsbnmn123", 100, "anxpp"}
 	Objects["mjjkxsxsaa23"] = &Object{"mjjkxsxsaa23", 101, "someone"}
 }
 
 func AddOne(object Object) (ObjectId string) {
-	object.ObjectId = "astaxie" + strconv.FormatInt(time.Now().UnixNano(), 10)
+	object.ObjectId = "anxpp" + strconv.FormatInt(time.Now().UnixNano(), 10)
 	Objects[object.ObjectId] = &object
 	return object.ObjectId
 }
@@ -198,7 +198,7 @@ var (
 
 func init() {
 	UserList = make(map[string]*User)
-	u := User{"user_11111", "astaxie", "11111", Profile{"male", 20, "Singapore", "astaxie@gmail.com"}}
+	u := User{"user_11111", "anxpp", "11111", Profile{"male", 20, "Singapore", "anxpp@gmail.com"}}
 	UserList["user_11111"] = &u
 }
 
@@ -419,7 +419,7 @@ import (
 	"reflect"
 	"strings"
 	{{timePkg}}
-	"github.com/astaxie/beego/orm"
+	"github.com/anxpp/beego/orm"
 )
 
 {{modelStruct}}

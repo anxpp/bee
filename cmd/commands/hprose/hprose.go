@@ -2,17 +2,17 @@ package hprose
 
 import (
 	"fmt"
-	"github.com/beego/bee/logger/colors"
+	"github.com/anxpp/bee/logger/colors"
 	"os"
 	"path"
 	"strings"
 
-	"github.com/beego/bee/cmd/commands"
-	"github.com/beego/bee/cmd/commands/api"
-	"github.com/beego/bee/cmd/commands/version"
-	"github.com/beego/bee/generate"
-	beeLogger "github.com/beego/bee/logger"
-	"github.com/beego/bee/utils"
+	"github.com/anxpp/bee/cmd/commands"
+	"github.com/anxpp/bee/cmd/commands/api"
+	"github.com/anxpp/bee/cmd/commands/version"
+	"github.com/anxpp/bee/generate"
+	beeLogger "github.com/anxpp/bee/logger"
+	"github.com/anxpp/bee/utils"
 )
 
 var CmdHproseapp = &commands.Command{
@@ -48,7 +48,7 @@ module %s
 
 go %s
 
-require github.com/astaxie/beego %s
+require github.com/anxpp/beego %s
 require github.com/smartystreets/goconvey v1.6.4
 `
 

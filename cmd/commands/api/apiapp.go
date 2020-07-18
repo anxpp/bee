@@ -16,16 +16,16 @@ package apiapp
 
 import (
 	"fmt"
-	"github.com/beego/bee/logger/colors"
+	"github.com/anxpp/bee/logger/colors"
 	"os"
 	path "path/filepath"
 	"strings"
 
-	"github.com/beego/bee/cmd/commands"
-	"github.com/beego/bee/cmd/commands/version"
-	"github.com/beego/bee/generate"
-	beeLogger "github.com/beego/bee/logger"
-	"github.com/beego/bee/utils"
+	"github.com/anxpp/bee/cmd/commands"
+	"github.com/anxpp/bee/cmd/commands/version"
+	"github.com/anxpp/bee/generate"
+	beeLogger "github.com/anxpp/bee/logger"
+	"github.com/anxpp/bee/utils"
 )
 
 var CmdApiapp = &commands.Command{
@@ -74,7 +74,7 @@ var apiMaingo = `package main
 import (
 	_ "{{.Appname}}/routers"
 
-	"github.com/astaxie/beego"
+	"github.com/anxpp/beego"
 )
 
 func main() {
@@ -91,8 +91,8 @@ var apiMainconngo = `package main
 import (
 	_ "{{.Appname}}/routers"
 
-	"github.com/astaxie/beego"
-	"github.com/astaxie/beego/orm"
+	"github.com/anxpp/beego"
+	"github.com/anxpp/beego/orm"
 	{{.DriverPkg}}
 )
 
@@ -111,14 +111,14 @@ module %s
 
 go %s
 
-require github.com/astaxie/beego %s
+require github.com/anxpp/beego %s
 require github.com/smartystreets/goconvey v1.6.4
 `
 
 var apirouter = `// @APIVersion 1.0.0
 // @Title beego Test API
 // @Description beego has a very cool tools to autogenerate documents for your API
-// @Contact astaxie@gmail.com
+// @Contact anxpp@gmail.com
 // @TermsOfServiceUrl http://beego.me/
 // @License Apache 2.0
 // @LicenseUrl http://www.apache.org/licenses/LICENSE-2.0.html
@@ -127,7 +127,7 @@ package routers
 import (
 	"{{.Appname}}/controllers"
 
-	"github.com/astaxie/beego"
+	"github.com/anxpp/beego"
 )
 
 func init() {
@@ -167,12 +167,12 @@ type Object struct {
 
 func init() {
 	Objects = make(map[string]*Object)
-	Objects["hjkhsbnmn123"] = &Object{"hjkhsbnmn123", 100, "astaxie"}
+	Objects["hjkhsbnmn123"] = &Object{"hjkhsbnmn123", 100, "anxpp"}
 	Objects["mjjkxsxsaa23"] = &Object{"mjjkxsxsaa23", 101, "someone"}
 }
 
 func AddOne(object Object) (ObjectId string) {
-	object.ObjectId = "astaxie" + strconv.FormatInt(time.Now().UnixNano(), 10)
+	object.ObjectId = "anxpp" + strconv.FormatInt(time.Now().UnixNano(), 10)
 	Objects[object.ObjectId] = &object
 	return object.ObjectId
 }
@@ -216,7 +216,7 @@ var (
 
 func init() {
 	UserList = make(map[string]*User)
-	u := User{"user_11111", "astaxie", "11111", Profile{"male", 20, "Singapore", "astaxie@gmail.com"}}
+	u := User{"user_11111", "anxpp", "11111", Profile{"male", 20, "Singapore", "anxpp@gmail.com"}}
 	UserList["user_11111"] = &u
 }
 
@@ -296,7 +296,7 @@ import (
 	"{{.Appname}}/models"
 	"encoding/json"
 
-	"github.com/astaxie/beego"
+	"github.com/anxpp/beego"
 )
 
 // Operations about object
@@ -389,7 +389,7 @@ import (
 	"{{.Appname}}/models"
 	"encoding/json"
 
-	"github.com/astaxie/beego"
+	"github.com/anxpp/beego"
 )
 
 // Operations about Users
@@ -514,7 +514,7 @@ import (
 	"path/filepath"
 	_ "{{.Appname}}/routers"
 
-	"github.com/astaxie/beego"
+	"github.com/anxpp/beego"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

@@ -20,11 +20,11 @@ import (
 	path "path/filepath"
 	"strings"
 
-	"github.com/beego/bee/cmd/commands"
-	"github.com/beego/bee/cmd/commands/version"
-	beeLogger "github.com/beego/bee/logger"
-	"github.com/beego/bee/logger/colors"
-	"github.com/beego/bee/utils"
+	"github.com/anxpp/bee/cmd/commands"
+	"github.com/anxpp/bee/cmd/commands/version"
+	beeLogger "github.com/anxpp/bee/logger"
+	"github.com/anxpp/bee/logger/colors"
+	"github.com/anxpp/bee/utils"
 )
 
 var module utils.DocValue
@@ -70,7 +70,7 @@ var maingo = `package main
 
 import (
 	_ "{{.Appname}}/routers"
-	"github.com/astaxie/beego"
+	"github.com/anxpp/beego"
 )
 
 func main() {
@@ -82,7 +82,7 @@ var router = `package routers
 
 import (
 	"{{.Appname}}/controllers"
-	"github.com/astaxie/beego"
+	"github.com/anxpp/beego"
 )
 
 func init() {
@@ -94,7 +94,7 @@ module %s
 
 go %s
 
-require github.com/astaxie/beego %s
+require github.com/anxpp/beego %s
 require github.com/smartystreets/goconvey v1.6.4
 `
 var test = `package test
@@ -107,7 +107,7 @@ import (
 	"path/filepath"
 	_ "{{.Appname}}/routers"
 
-	"github.com/astaxie/beego"
+	"github.com/anxpp/beego"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -141,7 +141,7 @@ func TestBeego(t *testing.T) {
 var controllers = `package controllers
 
 import (
-	"github.com/astaxie/beego"
+	"github.com/anxpp/beego"
 )
 
 type MainController struct {
@@ -150,7 +150,7 @@ type MainController struct {
 
 func (c *MainController) Get() {
 	c.Data["Website"] = "beego.me"
-	c.Data["Email"] = "astaxie@gmail.com"
+	c.Data["Email"] = "anxpp@gmail.com"
 	c.TplName = "index.tpl"
 }
 `

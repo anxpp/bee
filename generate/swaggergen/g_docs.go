@@ -34,10 +34,10 @@ import (
 
 	yaml "gopkg.in/yaml.v2"
 
-	"github.com/astaxie/beego/swagger"
-	"github.com/astaxie/beego/utils"
-	beeLogger "github.com/beego/bee/logger"
-	bu "github.com/beego/bee/utils"
+	"github.com/anxpp/beego/swagger"
+	"github.com/anxpp/beego/utils"
+	beeLogger "github.com/anxpp/bee/logger"
+	bu "github.com/anxpp/bee/utils"
 )
 
 const (
@@ -423,7 +423,7 @@ func analyseControllerPkg(vendorPath, localName, pkgpath string) {
 	if isSystemPackage(pkgpath) {
 		return
 	}
-	if pkgpath == "github.com/astaxie/beego" {
+	if pkgpath == "github.com/anxpp/beego" {
 		return
 	}
 	if localName != "" {

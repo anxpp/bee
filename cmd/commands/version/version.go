@@ -14,10 +14,10 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/beego/bee/cmd/commands"
-	beeLogger "github.com/beego/bee/logger"
-	"github.com/beego/bee/logger/colors"
-	"github.com/beego/bee/utils"
+	"github.com/anxpp/bee/cmd/commands"
+	beeLogger "github.com/anxpp/bee/logger"
+	"github.com/anxpp/bee/logger/colors"
+	"github.com/anxpp/bee/utils"
 	"gopkg.in/yaml.v2"
 )
 
@@ -57,7 +57,7 @@ Prints the current Bee, Beego and Go version alongside the platform information.
 }
 var outputFormat string
 
-const version = "1.11.0"
+const version = "1.11.0-mod"
 
 func init() {
 	fs := flag.NewFlagSet("version", flag.ContinueOnError)
@@ -128,7 +128,7 @@ func GetBeegoVersion() string {
 		return ""
 	}
 	for _, wg := range wgopath {
-		wg, _ = path.EvalSymlinks(path.Join(wg, "src", "github.com", "astaxie", "beego"))
+		wg, _ = path.EvalSymlinks(path.Join(wg, "src", "github.com", "anxpp", "beego"))
 		filename := path.Join(wg, "beego.go")
 		_, err := os.Stat(filename)
 		if err != nil {
@@ -159,7 +159,7 @@ func GetBeegoVersion() string {
 		}
 
 	}
-	return "Beego is not installed. Please do consider installing it first: https://github.com/astaxie/beego"
+	return "Beego is not installed. Please do consider installing it first: https://github.com/anxpp/beego"
 }
 
 func GetGoVersion() string {

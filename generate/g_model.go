@@ -21,9 +21,9 @@ import (
 	"path"
 	"strings"
 
-	beeLogger "github.com/beego/bee/logger"
-	"github.com/beego/bee/logger/colors"
-	"github.com/beego/bee/utils"
+	beeLogger "github.com/anxpp/bee/logger"
+	"github.com/anxpp/bee/logger/colors"
+	"github.com/anxpp/bee/utils"
 )
 
 func GenerateModel(mname, fields, currpath string) {
@@ -145,7 +145,7 @@ import (
 	"reflect"
 	"strings"
 	{{timePkg}}
-	"github.com/astaxie/beego/orm"
+	"github.com/anxpp/beego/orm"
 )
 
 {{modelStruct}}
